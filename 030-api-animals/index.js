@@ -43,7 +43,7 @@ function renderImages() {
       toggleInterval(false);
     });
     item.addEventListener("mouseout", () => {
-      item.style.transform = "scale(1)";
+      item.style.transform = "none";
       toggleInterval(true);
     });
   });
