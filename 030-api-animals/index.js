@@ -67,7 +67,8 @@ getAnimalImgBtn.addEventListener("click", () => {
       displayAnimalImage(data);
     })
     .catch((error) => {
-      throw new Error(error);
+      console.error("error:", error);
+      alert("Не удалось загрузить изображение. Попробуйте снова");
     });
   toggleInterval(true);
 });
