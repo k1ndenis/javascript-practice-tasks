@@ -51,10 +51,7 @@ function renderImages() {
 
 function displayAnimalImage(data) {
   let { message } = data;
-  for (let i = images.length - 1; i > 0; i--) {
-    images[i] = images[i - 1];
-  }
-  images[0] = message;
+  images.unshift(message);
   if (images.length >= 5) {
     images.length = 5;
   } else {
