@@ -27,7 +27,7 @@ function renderImages() {
   collage.innerHTML = "";
   images.forEach((image, index) => {
     const li = document.createElement("li");
-    li.innerHTML = `<img src=${image} height="150">`;
+    li.innerHTML = `<img class="my-2" src=${image} height="150">`;
     collage.appendChild(li);
   });
   const items = document.querySelectorAll("img");
