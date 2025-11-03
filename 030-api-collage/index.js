@@ -7,10 +7,14 @@
 // 5. Обновление коллажа приостанавливается, если изображение открыто в режиме просмотра
 // 6*. Добавить возможность скачивать изображения в режиме просмотра
 
-const images = [];
+const images = JSON.parse(localStorage.getItem("animals")) || [];
 const collage = document.getElementById("collage");
 const getAnimalImgBtn = document.getElementById("getAnimalImgBtn");
 let intervalId = null;
+
+function save() {
+  localStorage.setItem("animals", JSON.stringify(images));
+}
 
 function fetchAnimalImages() {
   const url = "https://dog.ceo/api/breeds/image/random";
@@ -76,7 +80,7 @@ function toggleInterval(bool) {
     if (!intervalId) {
       intervalId = setInterval(() => {
         getAnimalImgBtn.click();
-      }, 3000);
+      }, 2000);
     }
   } else {
     if (intervalId) {
@@ -84,4 +88,5 @@ function toggleInterval(bool) {
       intervalId = null;
     }
   }
+  save();
 }
